@@ -1,0 +1,18 @@
+{
+  "name": "React Native + Expo",
+  "dockerComposeFile": [
+    "../compose.yml"
+  ],
+  "service": "react-react-native-app",
+  "workspaceFolder": "/usr/src/app",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+    "msjsdiag.vscode-react-native",
+    "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "forwardPorts": [8081, 19000, 19001, 19002],
+  "postCreateCommand": "npm install"
+}

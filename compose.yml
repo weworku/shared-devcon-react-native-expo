@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  react-react-native-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./work:/usr/src/app # ローカルをコンテナ内にマウント
+    command: sleep infinity
+    mem_limit: 4g
