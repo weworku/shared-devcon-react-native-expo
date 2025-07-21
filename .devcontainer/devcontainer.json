@@ -8,11 +8,15 @@
   "customizations": {
     "vscode": {
       "extensions": [
-    "msjsdiag.vscode-react-native",
-    "esbenp.prettier-vscode"
+        "msjsdiag.vscode-react-native",
+        "esbenp.prettier-vscode"
       ]
     }
   },
-  "forwardPorts": [8081, 19000, 19001, 19002],
-  "postCreateCommand": "npm install"
+  "forwardPorts": [
+    8081,
+    19000,
+    19001,
+    19002
+  ]
 }
