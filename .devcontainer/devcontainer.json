@@ -8,11 +8,23 @@
   "customizations": {
     "vscode": {
       "extensions": [
-    "msjsdiag.vscode-react-native",
-    "esbenp.prettier-vscode"
+        "msjsdiag.vscode-react-native",
+        "esbenp.prettier-vscode",
+        "openai.chatgpt"
       ]
     }
   },
-  "forwardPorts": [8081, 19000, 19001, 19002],
-  "postCreateCommand": "npm install"
+  "forwardPorts": [
+    8081,
+    19000,
+    19001,
+    19002
+  ],
+  // "postCreateCommand": "npm install"
+  "mounts": [
+    "source=${env:SSH_AUTH_SOCK},target=/ssh-agent,type=bind"
+  ],
+  "containerEnv": {
+    "SSH_AUTH_SOCK": "/ssh-agent"
+  }
 }

@@ -9,6 +9,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get install -y curl unzip openjdk-17-jdk android-sdk adb \
     && npm install -g expo-cli \
     && apt-get clean
+RUN npm i -g @openai/codex@latest
 
 WORKDIR /usr/src/app
 
