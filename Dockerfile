@@ -1,6 +1,7 @@
 FROM node:22-slim
 # apt-get の対話プロンプトを抑止（ビルドが止まらないように）
 ENV DEBIAN_FRONTEND=noninteractive
+ENV LESSCHARSET=utf-8
 
 # 必要な依存をインストール
 RUN set -x \
@@ -9,5 +10,4 @@ RUN set -x \
     && npm install -g expo-cli \
     && apt-get clean
 
-ENV LESSCHARSET=utf-8
 WORKDIR /usr/src/app
