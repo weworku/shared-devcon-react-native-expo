@@ -8,7 +8,8 @@ RUN set -x \
     && apt-get update \
     && apt-get install -y git curl unzip jq vim \
     && npm install -g expo-cli \
-    && apt-get clean
-RUN npm i -g @openai/codex@latest
+    && npm i -g @openai/codex@latest \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app
