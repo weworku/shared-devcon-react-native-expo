@@ -20,10 +20,12 @@
     19001,
     19002
   ],
-  // "postCreateCommand": "npm install"
+  // ホストの SSH エージェントソケットをコンテナ内にマウント
+  // これにより、鍵をコピーせずにコンテナ内で Git/SSH が利用可能
   "mounts": [
     "source=${env:SSH_AUTH_SOCK},target=/ssh-agent,type=bind"
   ],
+  // SSH クライアントが上記ソケットを参照するように環境変数を設定
   "containerEnv": {
     "SSH_AUTH_SOCK": "/ssh-agent"
   }
