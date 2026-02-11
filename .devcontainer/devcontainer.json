@@ -23,7 +23,9 @@
   // ホストの SSH エージェントソケットをコンテナ内にマウント
   // これにより、鍵をコピーせずにコンテナ内で Git/SSH が利用可能
   "mounts": [
-    "source=${env:SSH_AUTH_SOCK},target=/ssh-agent,type=bind"
+    "source=${env:SSH_AUTH_SOCK},target=/ssh-agent,type=bind",
+    // Codex の個人ルールを共有（ファイル単体でマウント）
+    "source=${env:HOME}/.codex/AGENTS.override.md,target=/usr/src/app/.codex/AGENTS.override.md,type=bind,readonly"
   ],
   // SSH クライアントが上記ソケットを参照するように環境変数を設定
   "containerEnv": {
